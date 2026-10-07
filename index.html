@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Jade's Calculator</title>
+  <meta name="description" content="Jade's Calculator: a fast, keyboard-friendly calculator with history.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%2300a86b%22/><text x=%2250%22 y=%2272%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22 font-weight=%22bold%22>J</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="calc">
+    <header class="head">
+      <h1>Jade's Calculator</h1>
+      <button class="ghost" id="histBtn" aria-expanded="false" aria-controls="history">History</button>
+    </header>
+
+    <section class="screen" aria-live="polite">
+      <div class="expr" id="expr"></div>
+      <output class="value" id="value">0</output>
+    </section>
+
+    <section class="keys" aria-label="Calculator keys">
+      <button data-act="clear" class="fn">AC</button>
+      <button data-act="sign" class="fn" aria-label="Change sign">±</button>
+      <button data-act="percent" class="fn" aria-label="Percent">%</button>
+      <button data-op="÷" class="op" aria-label="Divide">÷</button>
+
+      <button data-num="7">7</button>
+      <button data-num="8">8</button>
+      <button data-num="9">9</button>
+      <button data-op="×" class="op" aria-label="Multiply">×</button>
+
+      <button data-num="4">4</button>
+      <button data-num="5">5</button>
+      <button data-num="6">6</button>
+      <button data-op="−" class="op" aria-label="Subtract">−</button>
+
+      <button data-num="1">1</button>
+      <button data-num="2">2</button>
+      <button data-num="3">3</button>
+      <button data-op="+" class="op" aria-label="Add">+</button>
+
+      <button data-act="back" class="fn" aria-label="Delete last digit">⌫</button>
+      <button data-num="0">0</button>
+      <button data-act="dot" aria-label="Decimal point">.</button>
+      <button data-act="equals" class="eq" aria-label="Equals">=</button>
+    </section>
+
+    <aside class="history" id="history" hidden>
+      <div class="hhead">
+        <h2>History</h2>
+        <button class="ghost" id="clearHist">Clear history</button>
+      </div>
+      <ul id="list"></ul>
+      <p class="none" id="none">No calculations yet. Results appear here after you press =.</p>
+    </aside>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
